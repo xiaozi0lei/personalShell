@@ -1,0 +1,10 @@
+Host github.com
+    User git
+    StrictHostKeyChecking no
+    IdentityFile ~/.ssh/id_github
+
+Host xiaozi0lei
+    HostName github.com
+    User git
+    IdentityFile ~/.ssh/bak/id_xiaozi0lei
+
