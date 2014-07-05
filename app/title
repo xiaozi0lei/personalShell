@@ -1,0 +1,9 @@
+#! /bin/sh
+
+if [ "$1" == "" ]
+then
+	echo "usage: . title Your_Title_Name"
+	echo "note: there is source command \".\" in front of the comamnd."
+else
+	PROMPT_COMMAND="echo -ne \"\033]0;$1\007\""
+fi

@@ -1,0 +1,22 @@
+#! /bin/bash
+
+logFile="script/file.log"
+
+{
+echo "-------------"
+echo
+date
+#echo -ne "\033[31m"
+echo
+#who | grep "gusun"
+who | grep -v "gusun"
+
+if [ $? -eq 0 ]
+	then echo "-----dangerous, attention!!!-----"
+fi
+#echo -ne "\033[30m"
+echo
+uptime
+} | tee -a $logFile
+
+exit

@@ -1,0 +1,37 @@
+# .bashrc
+
+# Source global definitions
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+## User specific aliases and functions
+
+# ls alias to display date and pwd
+alias lc='ls --color; echo; echo; pwd; date'
+alias sungit='git add .; git commit -amp; git push'
+# ~/github/script/loginsun
+
+# enable tab-completion for git under Bash shell
+. ~/.git-completion.bash
+
+# Environments here ##
+
+# fcitx input method
+export XIM=fcitx
+export XIM_PROGRAM=fcitx
+export GTK_IM_MODULE=xim
+export XMODIFIERS="@im=fcitx"
+
+# My personal script
+export PATH=$PATH:~/github/tools/bin
+
+# http proxy when use curl to access the web page
+export http_proxy=http://localhost:8888
+
+# rvm ruby version management
+#rvm use 2.1.1
+
+# enable the Xserver access priviliage for the graphic program
+#xhost +
+
