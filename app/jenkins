@@ -10,6 +10,8 @@ usage()
 
 # environment variables
 export JENKINS_HOME=~/.jenkins
+# enable tls protocol
+JAVA_ARGS="-Dmail.smtp.starttls.enable=true -Dmail.debug=true"
 
 if [ $# -eq 0 ] || [ $# -gt 1 ]
 then
@@ -19,7 +21,8 @@ fi
 
 case $1 in
     start)
-        nohup java -jar jenkins.war --controlPort=8001 > ./jenkins.log 2>&1 &
+        nohup java $JAVA_ARGS -jar jenkins.war --controlPort=8001 > ./jenkins.log 2>&1 &
+        echo "started!"
         ;;
     stop)
         ps aux | grep 8001 | grep jenkins > /dev/null
