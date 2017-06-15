@@ -21,8 +21,17 @@ fi
 
 case $1 in
     start)
-        nohup java $JAVA_ARGS -jar jenkins.war --controlPort=8001 > ./jenkins.log 2>&1 &
-        echo "started!"
+        (nohup java $JAVA_ARGS -jar jenkins.war --httpPort=8081 --controlPort=8001 > ./jenkins.log 2>&1) &
+
+        sleep 3
+
+        ps aux | grep jenkins | grep 8081 > /dev/null
+        if [ $? -ne 0 ]
+        then
+            echo "jenkins server start failed, please check jenkins.log!"
+        else
+            echo "jenkins started!"
+        fi
         ;;
     stop)
         ps aux | grep 8001 | grep jenkins > /dev/null
