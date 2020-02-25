@@ -1,0 +1,74 @@
+#!/bin/bash
+
+# set the command line colors
+# 如果没有指定，则自动选择颜色
+export LS_OPTIONS='--color=auto'
+# 是否输出颜色
+export CLICOLOR='Yes'
+# 指定颜色
+export LSCOLORS='Exfxcxdxbxegedabagacad'
+
+# set alias
+alias ll='ls -l'
+
+# set PATH
+#PATH=/usr/local/mysql/bin:$PATH
+# set leanote revel
+#PATH=$HOME/goPath/bin:$PATH
+#export GOPATH=$HOME/goPath
+
+# set proxy, tinyproxy locate on the '/usr/local/Cellar/tinyproxy/1.8.4/sbin'
+#export http_proxy=http://127.0.0.1:8888
+#export https_proxy=http://127.0.0.1:8888
+
+# for tomcat apache apr 阿帕奇可移植运行时
+#export DYLD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/apr/lib
+
+# git completion 自动补全
+source ~/.git-completion.bash
+
+#source ~/.profile
+#PATH="/usr/local/opt/openssl/bin:$PATH"
+
+# for golang open source
+#export GOROOT=$HOME/go
+#PATH=$GOROOT/bin:$PATH
+
+# for Android sdk
+#export ANDROID_HOME=/Users/guolei/Library/Android/sdk
+
+#PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin:$PATH
+
+# for JAVA_HOME
+#export JAVA_HOME=$(/usr/libexec/java_home)
+#export JAVA_HOME=/Users/guolei/webtool/openjdk-debug/j2sdk-image
+#PATH=$JAVA_HOME/bin:$PATH
+
+# for gradle
+#PATH=/Users/guolei/webtool/gradle-3.3/bin:$PATH
+
+# for ant
+#export ANT_HOME=/Users/guolei/webtool/apache-ant-1.9.9
+#PATH=$ANT_HOME/bin:$PATH
+
+# for ansible
+#export ANSIBLE_INVENTORY=~/ansible_hosts
+
+# keep this in the last line
+#export PATH
+
+# offcial 配置 java_home
+#export JAVA_HOME=`/usr/libexec/java_home -v 11`
+export JAVA_11_HOME=/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
+export JAVA_10_HOME=/Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home
+export JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_181.jdk/Contents/Home
+export JAVA_HOME=$JAVA_8_HOME
+
+export PATH="/usr/local/opt/node@10/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/node@10/lib"
+export CPPFLAGS="-I/usr/local/opt/node@10/include"
+
+export PATH="/usr/local/opt/php@7.1/bin:$PATH"
+export PATH="/usr/local/opt/php@7.1/sbin:$PATH"
+# rabbitMQ
+export PATH=$PATH:/usr/local/opt/rabbitmq/sbin
